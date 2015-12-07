@@ -12,14 +12,14 @@ namespace MoveTorrents
     {
         private static string Default_Torrent_Directory = @"C:\Users\" + Environment.UserName + @"\Downloads\";
         private static string Domain_User_Directory = @"C:\Users\" + Environment.UserName + "." + Environment.UserDomainName + @"\Downloads\";
-        private static string Default_Destination_Directory = @"\\192.168.0.11\Torrents\";
+        private static string Default_Destination_Directory = @"\\MyWinServer\Torrents\";
 
         static void Main(string[] args)
         {
             // Important information
             Console.WriteLine("This program will help you watch a folder for certain file extensions.");
             Console.WriteLine("\nOnce a file is found with the given extension it will be moved to a destination folder.");
-            Console.WriteLine("\nBy default the watched folder is the logged in user's Download directory.\n\n)"); 
+            Console.WriteLine("\nBy default the watched folder is the logged in user's Download directory.\n\n"); 
 
             // Variables
             string Watched_Folder = "";
@@ -88,7 +88,7 @@ namespace MoveTorrents
             do
             {
                 // Get the file extension to move
-                Console.WriteLine("\nWhat type of file do you want to move?");
+                Console.WriteLine("\n\nWhat type of file do you want to move?");
                 Console.WriteLine("\nIs the default file extension to move '.torrent' ok? (Y)es (N)o");
                 Key_Pressed = Console.ReadKey().KeyChar;
             
@@ -101,7 +101,7 @@ namespace MoveTorrents
                 bool Correct = false;
                 do
                 {
-                    Console.WriteLine("\nWhat file extension do you want to move? (Include the .  i.e. '.jpg')");
+                    Console.WriteLine("\n\nWhat file extension do you want to move? (Include the .  i.e. '.jpg')");
                     Extension_To_Watch = Console.ReadLine();
 
                     do
@@ -123,7 +123,7 @@ namespace MoveTorrents
 
             #region Get the Destination Folder
             // Confirm destination location
-            Console.WriteLine("\nIs the destination folder located at : " + Default_Destination_Directory + " ? (Y)es or (N)o");
+            Console.WriteLine("\n\nIs the destination folder located at : " + Default_Destination_Directory + " ? (Y)es or (N)o");
             Key_Pressed = Console.ReadKey().KeyChar;
 
             // If destination is not in the default location
