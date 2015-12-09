@@ -172,8 +172,15 @@ namespace MoveTorrents
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("Failed to move [ " + file + " ] to [ " + Destination_Directory + Path.GetFileName(file) + " ]");
-                        Console.WriteLine("Because : " + e.Message);
+                        // If the file exists already in the destination then replace it with the newer one
+                        if (File.Exists(Destination_Directory + Path.GetFileName(file)))
+                            File.Delete(Destination_Directory + Path.GetFileName(file));
+                        // Otherwise inform the user of the problem
+                        else
+                        {
+                            Console.WriteLine("Failed to move [ " + file + " ] to [ " + Destination_Directory + Path.GetFileName(file) + " ]");
+                            Console.WriteLine("Because : " + e.Message);
+                        }
                     }
                 }
 
