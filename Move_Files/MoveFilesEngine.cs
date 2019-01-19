@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Move_Files
 {
-    class MoveFiles
+    class MoveFilesEngine
     {
         #region Variables
         private const string directoryNotFoundError = "Directory not found!";

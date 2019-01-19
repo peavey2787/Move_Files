@@ -4,9 +4,9 @@
     {
         static void Main(string[] args)
         {
-            MoveFiles mf = new MoveFiles();
-            mf.Setup();
-            mf.Start();
+            MoveFilesEngine mfe = new MoveFilesEngine();
+            mfe.Setup();
+            mfe.Start();
         }
     }
 }
