@@ -25,7 +25,7 @@ namespace Move_Files
         #endregion
 
         #region Public methods
-        public MoveFiles()
+        public void MoveFiles()
         {
             InitializeDefaults();
             ShowUserInstructions();
